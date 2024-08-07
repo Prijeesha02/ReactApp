@@ -1,0 +1,1 @@
+document.writeln("This is from js file")

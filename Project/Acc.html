@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories Store</title>
+    <style>
+        /* CSS for the Accessories Store */
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url('./images1/back2.jpg');
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            flex: 1;
+            margin: 20px 0;
+        }
+
+        main h2 {
+            text-align: center;
+        }
+
+        main p {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            color: green;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Accessories Store</h1>
+            <nav>
+                <ul>
+                    <!--<li><a href="login.html">Login</a></li>--> <!-- Link to the login page -->
+                    <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#products" onclick="showSection('products')">Products</a></li>
+                    <li><a href="#about" onclick="showSection('about')">About Us</a></li>
+                    <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup2.html">signup</a></li> <!-- Link to the login page -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Home Section -->
+        <section id="home"><div class="container">
+            <h2>Welcome to the Accessories Store</h2>
+            <p>Your one-stop shop for the latest and trendiest accessories. Discover our collection of necklaces,rings, bracelets, earrings, and more to find the perfect pieces to complement your style.</p>
+            <button onclick="showSection('products')">Shop Now</button>
+            </div>
+        </section>
+        
+        <!-- Products Section -->
+        <section id="products" class="container hidden">
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="images1/necklace.jpg" alt="Necklace">
+                    <h3>Elegant Necklace</h3>
+                    <p>RS.480</p>
+                </div>
+                <div class="product">
+                    <img src="images1/Bracelett.jpg" alt="Bracelet">
+                    <h3>Stylish Bracelet</h3>
+                    <p>Rs.2000</p>
+                </div>
+                <div class="product">
+                    <img src="images1/earrings.jpg" alt="Earrings">
+                    <h3>Chic Earrings</h3>
+                    <p>Rs.400</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about" class="container hidden">
+            <h2>About Us</h2>
+            <p>We are a leading accessories store, offering a wide range of fashionable items to enhance your style. Our mission is to provide high-quality products that make you feel confident and stylish.</p>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="container hidden">
+            <h2>Contact Us</h2>
+            <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message:</label>
+                    <textarea id="contact-message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+            <div class="message" id="message">
+                <!-- Success or error messages will be displayed here -->
+            </div>
+        </section>
+        
+        <!-- Authentication Section (removed) -->
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Accessories Store. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+        
+        function showThankYouMessage(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            alert('Thank you for contacting us! We will get back to you soon.'); // Show the alert message
+            document.getElementById('contact-form').reset(); // Optionally reset the form
+        }
+
+    
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show an alert with form data
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+
+            alert(`Thank you, ${name}! Your message has been received.\nEmail: ${email}\nMessage: ${message}`);
+
+            // Optionally, you can reset the form or show a success message
+            document.getElementById('contact-form').reset();
+            setTimeout(function() {
+                window.location.href = 'Acc.html'; // Redirect to the homepage after 2 seconds
+            }, 1000);
+         // Optionally reset the form
+        
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    
+ 
+    </script>
+</body>
+</html>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

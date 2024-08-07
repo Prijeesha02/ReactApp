@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width,initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function fun1(){
+                console.log("from function..")
+                return"from function return"
+            }
+            let retVal=fun1();
+            console.log(retVal);
+            fun=()=>{
+                document.writeln("from arrow function")
+            };
+           
+            fun1()
+            let AddValue=(arg1,arg2)=>{
+                return arg1+arg2
+            }
+            document.writeln("<h1>"+AddValue(10,20)+"</h1>")
+        </script>
+    </body>

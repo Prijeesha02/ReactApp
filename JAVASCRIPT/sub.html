@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width,initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #numberInput{
+                width:3%;
+                height:40px;
+                font-size:larger;
+            }
+            #numberInput:focus{
+                border:2px solid yellow;
+                background: brown;
+                color: honeydew;
+            }
+            #display{
+                border:3px solid red;
+                border-radius: 5px;
+                width: 20%;
+                color: blue;
+                height: 60px;
+            }
+        </style>
+       
+        </head>
+        <body>
+            <div>
+                <input type="text" placeholder="Enter the values" class="numberInput" id="firstInputValue"/>
+                <input type="text" placeholder="Enter the values" class="numberInput" id="secondInputValue"/>
+                
+                <button onclick="getValue()">sub</button>
+               
+                
+                
+                <h1 id="display"></h1>
+            </div>
+            <script>
+                function getValue(){
+                    let firstValue=Number(document.getElementById("firstInputValue").value);
+                    let secondValue=Number(document.getElementById("secondInputValue").value);
+                    //let add=firstValue+secondValue;
+                    let sub=firstValue-secondValue;
+                    //let mul=firstValue*secondValue;
+
+                    //document.getElementById("display").innerHTML=Addition
+                    //let f_name=document.getElementById("name").value
+                    
+                    //alert(f_name)
+                   //document.getElementById("display").innerHTML =add
+                   document.getElementById("display").innerHTML =sub
+                   //document.getElementById("display").innerHTML =mul
+                }
+                //getValue()
+
+            </script>
+        </body>
+        </html>
